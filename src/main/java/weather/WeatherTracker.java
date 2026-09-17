@@ -1,9 +1,11 @@
 package weather;
 
 public class WeatherTracker {
+
     String currentConditions;
-    Phone phone;
-    Email email;
+
+    private final Notifier phone;
+    private final Notifier email;
 
     public WeatherTracker() {
         phone = new Phone();
