@@ -1,21 +1,14 @@
 package birds;
 
-public class Penguin implements Bird {
+class Penguin extends Bird implements Swimmable {
+
     String currentLocation;
-    int numberOfFeathers;
 
     public Penguin(int initialFeatherCount) {
-        this.numberOfFeathers = initialFeatherCount;
+        super(initialFeatherCount);
     }
 
-    public void molt() {
-        this.numberOfFeathers -= 1;
-    }
-
-    public void fly() {
-        throw new UnsupportedOperationException();
-    }
-
+    @Override
     public void swim() {
         this.currentLocation = "in the water";
     }
