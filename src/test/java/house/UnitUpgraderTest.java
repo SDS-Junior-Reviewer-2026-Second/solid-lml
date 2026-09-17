@@ -2,7 +2,6 @@ package house;
 
 import house.PenthouseSuite;
 import house.Studio;
-import house.UnitUpgrader;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,8 +12,7 @@ public class UnitUpgraderTest {
     public void testUpgraderIncreasesSquareFootageOfPenthouse() {
         PenthouseSuite penthouse = new PenthouseSuite();
         penthouse.setSquareFootage(1500);
-        UnitUpgrader upgrader = new UnitUpgrader();
-        upgrader.upgrade(penthouse);
+        penthouse.upgrade();
 
         assertEquals(1540, penthouse.squareFootage);
     }
@@ -22,8 +20,7 @@ public class UnitUpgraderTest {
     @Test
     public void testUpgraderAddsBedroomToApartment() {
         PenthouseSuite penthouse = new PenthouseSuite();
-        UnitUpgrader upgrader = new UnitUpgrader();
-        upgrader.upgrade(penthouse);
+        penthouse.upgrade();
 
         assertEquals(5, penthouse.numberOfBedrooms);
     }
@@ -32,8 +29,7 @@ public class UnitUpgraderTest {
     public void testUpgraderIncreasesSquareFootageOfStudio() {
         Studio studio = new Studio();
         studio.setSquareFootage(550);
-        UnitUpgrader upgrader = new UnitUpgrader();
-        upgrader.upgrade(studio);
+        studio.upgrade();
 
         assertEquals(590, studio.squareFootage);
     }
@@ -41,8 +37,7 @@ public class UnitUpgraderTest {
     @Test
     public void testUpgraderDoesntAddBedroomToStudios() {
         Studio studio = new Studio();
-        UnitUpgrader upgrader = new UnitUpgrader();
-        upgrader.upgrade(studio);
+        studio.upgrade();
 
         assertEquals(0, studio.numberOfBedrooms);
     }
